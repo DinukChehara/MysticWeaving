@@ -7,7 +7,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
-public class UpgradeEnergyCommand implements CommandExecutor {
+public class UpgradeEnergyLevelCommand implements CommandExecutor {
 
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String s, @NotNull String @NotNull [] strings) {
@@ -27,7 +27,7 @@ public class UpgradeEnergyCommand implements CommandExecutor {
         }
 
         PlayerData.upgradeEnergyLevel(player);
-        player.sendRichMessage("<light_purple>Upgraded your Mystic Energy Level! | " + currentLevel + " -> " + PlayerData.getMaxEnergy(player));
+        player.sendRichMessage("<light_purple>Upgraded your Mystic Energy Level | " + currentLevel + " -> " + PlayerData.getMaxEnergy(player));
 
         return true;
     }

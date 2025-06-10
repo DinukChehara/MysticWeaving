@@ -5,11 +5,15 @@ api-version: '1.21'
 authors: [ Tomqnto ]
 
 commands:
-  addMagicDust:
+  add_mystic_dust:
     usage: /<command> <player> <amount>
   mysticgui:
     usage: /<command>
   levelup:
     usage: /<command>
-  upgradeenergy:
+  upgrade_energy_level:
+    usage: /<command>
+  reset:
+    usage: /<command>
+  upgrade_energy_regen_amount:
     usage: /<command>

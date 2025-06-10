@@ -91,7 +91,7 @@ public class PlayerData {
         getConfig().set(player.getName() + ".level", 0);
         getConfig().set(player.getName() + ".energy", 50);
         getConfig().set(player.getName() + ".max-energy", 50);
-        getConfig().set(player.getName() + ".energy-regen-speed", 5);
+        getConfig().set(player.getName() + ".energy-regen-amount", 1);
         saveConfig();
     }
 
@@ -106,6 +106,24 @@ public class PlayerData {
     public static void upgradeEnergyLevel(Player player){
         setMaxEnergy(player, getMaxEnergy(player) + 25);
         saveConfig();
+    }
+
+    public static int getEnergyRegenAmount(Player player){
+        return getConfig().getInt(player.getName() + ".energy-regen-amount");
+    }
+
+    public static void setEnergyRegenAmount(Player player, int amount){
+        getConfig().set(player.getName() + ".energy-regen-amount", amount);
+        saveConfig();
+    }
+
+    public static void upgradeEnergyRegenAmount(Player player){
+        setEnergyRegenAmount(player, getEnergyRegenAmount(player)+1);
+        saveConfig();
+    }
+
+    public static int getEnergyRegenAmountUpgradeCost(Player player){
+        return (int) Math.round(200 * Math.pow(1.4, getEnergyRegenAmount(player)-1));
     }
 
 }

@@ -1,7 +1,9 @@
 C:\Users\Dinuk\Desktop\plugin dev\MysticWeaving\src\main\java\me\tomqnto\mysticWeaving\commands\AddMagicDustCommand.java
 C:\Users\Dinuk\Desktop\plugin dev\MysticWeaving\src\main\java\me\tomqnto\mysticWeaving\commands\LevelUpCommand.java
 C:\Users\Dinuk\Desktop\plugin dev\MysticWeaving\src\main\java\me\tomqnto\mysticWeaving\commands\MysticGuiCommand.java
-C:\Users\Dinuk\Desktop\plugin dev\MysticWeaving\src\main\java\me\tomqnto\mysticWeaving\commands\UpgradeEnergyCommand.java
+C:\Users\Dinuk\Desktop\plugin dev\MysticWeaving\src\main\java\me\tomqnto\mysticWeaving\commands\ResetCommand.java
+C:\Users\Dinuk\Desktop\plugin dev\MysticWeaving\src\main\java\me\tomqnto\mysticWeaving\commands\UpgradeEnergyLevelCommand.java
+C:\Users\Dinuk\Desktop\plugin dev\MysticWeaving\src\main\java\me\tomqnto\mysticWeaving\commands\UpgradeEnergyRegenAmountCommand.java
 C:\Users\Dinuk\Desktop\plugin dev\MysticWeaving\src\main\java\me\tomqnto\mysticWeaving\listeners\JoinListener.java
 C:\Users\Dinuk\Desktop\plugin dev\MysticWeaving\src\main\java\me\tomqnto\mysticWeaving\managers\PlayerData.java
 C:\Users\Dinuk\Desktop\plugin dev\MysticWeaving\src\main\java\me\tomqnto\mysticWeaving\menus\api\InventoryListener.java
