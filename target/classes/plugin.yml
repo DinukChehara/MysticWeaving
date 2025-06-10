@@ -1,0 +1,15 @@
+name: MysticWeaving
+version: '1.0-SNAPSHOT'
+main: me.tomqnto.mysticWeaving.MysticWeaving
+api-version: '1.21'
+authors: [ Tomqnto ]
+
+commands:
+  addMagicDust:
+    usage: /<command> <player> <amount>
+  mysticgui:
+    usage: /<command>
+  levelup:
+    usage: /<command>
+  upgradeenergy:
+    usage: /<command>
