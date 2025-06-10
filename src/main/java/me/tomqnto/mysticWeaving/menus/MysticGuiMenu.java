@@ -1,5 +1,6 @@
 package me.tomqnto.mysticWeaving.menus;
 
+import me.tomqnto.mysticWeaving.managers.MysticItems;
 import me.tomqnto.mysticWeaving.managers.PlayerData;
 import me.tomqnto.mysticWeaving.menus.api.SimpleMenu;
 import net.kyori.adventure.text.Component;
@@ -100,9 +101,27 @@ public class MysticGuiMenu extends SimpleMenu {
 
         regenItem.setItemMeta(regenMeta);
 
+        // Get Dust item
+
+        ItemStack getDustItem = MysticItems.getMysticDust(1);
+        ItemMeta getDustMeta = getDustItem.getItemMeta();
+
+
+
+        if (playerDustAmount==0){
+            getDustMeta.setLore(List.of("§7|", "§7| You do not have Mystic Dust"));
+            getDustMeta.itemName(Component.text("Get Mystic Dust").color(NamedTextColor.GRAY));
+        } else{
+            getDustMeta.itemName(Component.text("Get Mystic Dust").color(NamedTextColor.LIGHT_PURPLE));
+            getDustMeta.setLore(List.of("§d|", "§d| Click to get Mystic Dust!"));
+        }
+
+        getDustItem.setItemMeta(getDustMeta);
+
         setItem(10,levelupItem, player -> {player.performCommand("levelup"); player.closeInventory(); player.performCommand("mysticgui");});
         setItem(13, energyItem, player -> {player.performCommand("upgrade_energy_level"); player.closeInventory(); player.performCommand("mysticgui");});
         setItem(16, regenItem, player -> {player.performCommand("upgrade_energy_regen_amount"); player.closeInventory(); player.performCommand("mysticgui");});
+        setItem(31, getDustItem, player -> new GetDustMenu(player).open(player));
         setItem(45, profileItem);
     }
 

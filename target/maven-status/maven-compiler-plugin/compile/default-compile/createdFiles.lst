@@ -1,6 +1,8 @@
 me\tomqnto\mysticWeaving\listeners\JoinListener.class
 me\tomqnto\mysticWeaving\MysticWeaving.class
 me\tomqnto\mysticWeaving\commands\MysticGuiCommand.class
+me\tomqnto\mysticWeaving\commands\GetMysticDustCommand.class
+me\tomqnto\mysticWeaving\managers\MysticItems.class
 me\tomqnto\mysticWeaving\menus\api\SimpleMenu$Rows.class
 me\tomqnto\mysticWeaving\tasks\ActionBar.class
 me\tomqnto\mysticWeaving\commands\ResetCommand.class
@@ -12,5 +14,7 @@ me\tomqnto\mysticWeaving\menus\api\Menu.class
 me\tomqnto\mysticWeaving\commands\AddMagicDustCommand.class
 me\tomqnto\mysticWeaving\commands\LevelUpCommand.class
 me\tomqnto\mysticWeaving\commands\UpgradeEnergyRegenAmountCommand.class
-me\tomqnto\mysticWeaving\tasks\TimedRewards.class
+me\tomqnto\mysticWeaving\menus\api\PagedMenu.class
+me\tomqnto\mysticWeaving\menus\GetDustMenu.class
 me\tomqnto\mysticWeaving\commands\UpgradeEnergyLevelCommand.class
+me\tomqnto\mysticWeaving\listeners\MysticDustListener.class

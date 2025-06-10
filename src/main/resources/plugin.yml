@@ -17,3 +17,5 @@ commands:
     usage: /<command>
   upgrade_energy_regen_amount:
     usage: /<command>
+  get_mystic_dust:
+    usage: /<command>

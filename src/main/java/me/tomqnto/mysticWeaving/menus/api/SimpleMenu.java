@@ -2,9 +2,11 @@ package me.tomqnto.mysticWeaving.menus.api;
 
 import net.kyori.adventure.text.Component;
 import org.bukkit.Bukkit;
+import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.HashMap;
@@ -12,16 +14,27 @@ import java.util.function.Consumer;
 
 public abstract class SimpleMenu implements Menu{
 
+    protected static final ItemStack PLACEHOLDER_ITEM;
+
+    static {
+        PLACEHOLDER_ITEM = new ItemStack(Material.BLACK_STAINED_GLASS_PANE);
+        final ItemMeta meta = PLACEHOLDER_ITEM.getItemMeta();
+        meta.displayName(Component.space());
+        PLACEHOLDER_ITEM.setItemMeta(meta);
+    }
+    private boolean usePlaceholders;
     private final Inventory inventory;
-    private HashMap<Integer, Consumer<Player>> actions = new HashMap<>();
+    private HashMap<Integer, Consumer<Player>> actionsMap = new HashMap<>();
+    private HashMap<Integer, ItemStack> itemsMap = new HashMap<>();
 
     public SimpleMenu(Rows rows, Component title) {
+        this.usePlaceholders = true;
         this.inventory = Bukkit.createInventory(this, rows.getSize(), title);
     }
 
     @Override
     public void click(Player player, int slot) {
-        Consumer<Player> action = this.actions.get(slot);
+        Consumer<Player> action = this.actionsMap.get(slot);
 
         if (action!=null)
             action.accept(player);
@@ -34,8 +47,38 @@ public abstract class SimpleMenu implements Menu{
 
     @Override
     public void setItem(int slot, ItemStack item, Consumer<Player> action) {
-        this.actions.put(slot, action);
+        this.actionsMap.put(slot, action);
+        this.itemsMap.put(slot, item);
         getInventory().setItem(slot, item);
+    }
+
+    public void setUsePlaceholders(boolean usePlaceholders) {
+        this.usePlaceholders = usePlaceholders;
+    }
+
+    @Override
+    public void setPlaceholders() {
+        for (int i = 0; i < getInventory().getSize(); i++) {
+            if (getInventory().getItem(i) == null)
+                getInventory().setItem(i, PLACEHOLDER_ITEM);
+        }
+    }
+
+    @Override
+    public boolean usePlaceholders() {
+        return usePlaceholders;
+    }
+
+    @Override
+    public void update() {
+        getInventory().clear();
+
+        for (int i = 0; i < getInventory().getSize(); i++) {
+            final ItemStack item = getItemsMap().get(i);
+
+            if (item != null)
+                getInventory().setItem(i, item);
+        }
     }
 
     public abstract void onSetup();
@@ -57,5 +100,13 @@ public abstract class SimpleMenu implements Menu{
         public int getSize() {
             return size;
         }
+    }
+
+    public HashMap<Integer, ItemStack> getItemsMap(){
+        return this.itemsMap;
+    }
+
+    public HashMap<Integer, Consumer<Player>> getActionsMap(){
+        return this.actionsMap;
     }
 }
