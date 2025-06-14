@@ -6,7 +6,7 @@ import org.bukkit.inventory.ItemStack;
 
 import java.util.function.Consumer;
 
-public interface Menu extends InventoryHolder {
+public interface Menu extends InventoryHolder{
 
     void click(Player player, int slot);
 

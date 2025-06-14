@@ -1,9 +1,11 @@
 package me.tomqnto.mysticWeaving.menus.api;
 
+import me.tomqnto.mysticWeaving.MysticWeaving;
 import net.kyori.adventure.text.Component;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
+import org.bukkit.event.Listener;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
@@ -12,7 +14,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.HashMap;
 import java.util.function.Consumer;
 
-public abstract class SimpleMenu implements Menu{
+public abstract class SimpleMenu implements Menu, Listener {
 
     protected static final ItemStack PLACEHOLDER_ITEM;
 
@@ -30,6 +32,7 @@ public abstract class SimpleMenu implements Menu{
     public SimpleMenu(Rows rows, Component title) {
         this.usePlaceholders = true;
         this.inventory = Bukkit.createInventory(this, rows.getSize(), title);
+        MysticWeaving.plugin.getServer().getPluginManager().registerEvents(this, MysticWeaving.plugin);
     }
 
     @Override
@@ -71,14 +74,10 @@ public abstract class SimpleMenu implements Menu{
 
     @Override
     public void update() {
-        getInventory().clear();
-
-        for (int i = 0; i < getInventory().getSize(); i++) {
-            final ItemStack item = getItemsMap().get(i);
-
-            if (item != null)
-                getInventory().setItem(i, item);
-        }
+        inventory.clear();
+        itemsMap.clear();
+        actionsMap.clear();
+        onSetup();
     }
 
     public abstract void onSetup();

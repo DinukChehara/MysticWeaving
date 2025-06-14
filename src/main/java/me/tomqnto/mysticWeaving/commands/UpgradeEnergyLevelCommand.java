@@ -17,11 +17,11 @@ public class UpgradeEnergyLevelCommand implements CommandExecutor {
             return true;
         }
 
-        int dust = PlayerData.getMysticDust(player);
+        int paid = PlayerData.getEnergyLevelUpgradePaid(player);
         int currentLevel = PlayerData.getMaxEnergy(player);
         int upgradeCost = PlayerData.getEnergyUpgradeCost(player);
 
-        if (upgradeCost>dust){
+        if (upgradeCost>paid){
             player.sendRichMessage("<gray>You do not have enough <light_purple>Mystic Dust<gray> to upgrade your <light_purple>Mystic Energy Level");
             return true;
         }

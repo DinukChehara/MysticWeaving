@@ -17,14 +17,17 @@ public class LevelUpCommand implements CommandExecutor {
             return true;
         }
 
-        int dust = PlayerData.getMysticDust(player);
+        int paid = PlayerData.getLevelUpgradePaid(player);
         int cost = PlayerData.getNextLevelupCost(player);
         int level = PlayerData.getLevel(player);
 
-        if (dust>=cost){
-            PlayerData.addMysticDust(player,-1 * cost);
+        if (paid>=cost){
             PlayerData.levelup(player);
             player.sendRichMessage("<light_purple>You leveled up | " + level + " -> " + PlayerData.getLevel(player));
+            if (paid>cost){
+                paid-=cost;
+                PlayerData.setLevelUpgradePaid(player, paid);
+            }
         } else{
             player.sendRichMessage("<gray>You do not have enough <light_purple>Mystic Dust<gray> to level up");
         }

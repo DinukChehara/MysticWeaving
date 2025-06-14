@@ -17,11 +17,10 @@ public class ActionBar extends BukkitRunnable {
             PlayerData.ifNoDataSetDefaults(player);
 
             int level = PlayerData.getLevel(player);
-            int dust = PlayerData.getMysticDust(player);
             int energy = PlayerData.getEnergy(player);
             int maxenergy = PlayerData.getMaxEnergy(player);
 
-            player.sendActionBar(MiniMessage.miniMessage().deserialize("<light_purple>Mystic Level: " + level + "<darK_gray> | <light_purple>Mystic Dust: " + dust + " <darK_gray>| <light_purple>Mystic Energy: " + energy + "/" + maxenergy));
+            player.sendActionBar(MiniMessage.miniMessage().deserialize("<light_purple>Mystic Level: " + level + " <darK_gray>| <light_purple>Mystic Energy: " + energy + "/" + maxenergy));
 
         }
 

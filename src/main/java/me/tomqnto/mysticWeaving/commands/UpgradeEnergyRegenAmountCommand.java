@@ -16,11 +16,11 @@ public class UpgradeEnergyRegenAmountCommand implements CommandExecutor {
             return true;
         }
 
-        int dust = PlayerData.getMysticDust(player);
+        int paid = PlayerData.getEnergyRegenUpgradePaid(player);
         int cost = PlayerData.getEnergyRegenAmountUpgradeCost(player);
         int currentAmount = PlayerData.getEnergyRegenAmount(player);
 
-        if (dust>=cost){
+        if (paid>=cost){
             PlayerData.upgradeEnergyRegenAmount(player);
             player.sendRichMessage("<light_purple>Upgraded your Energy Regen Amount | +" + currentAmount + " -> +" + (currentAmount + 1));
         } else{

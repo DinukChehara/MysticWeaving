@@ -1,5 +1,6 @@
 package me.tomqnto.mysticWeaving.commands;
 
+import me.tomqnto.mysticWeaving.Utils;
 import me.tomqnto.mysticWeaving.managers.MysticItems;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -8,7 +9,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.jetbrains.annotations.NotNull;
 
-public class GetMysticDustCommand implements CommandExecutor {
+public class GiveMysticDustCommand implements CommandExecutor {
 
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String s, @NotNull String @NotNull [] args) {
@@ -34,9 +35,8 @@ public class GetMysticDustCommand implements CommandExecutor {
 
         ItemStack dust = MysticItems.getMysticDust(amount);
 
-        player.give(dust);
-        player.sendRichMessage("<light_purple>You received " + amount + " Magic Dust!");
-
+        Utils.give(player, dust);
+        
         return true;
     }
 }

@@ -1,8 +1,8 @@
-C:\Users\Dinuk\Desktop\plugin dev\MysticWeaving\src\main\java\me\tomqnto\mysticWeaving\commands\AddMagicDustCommand.java
-C:\Users\Dinuk\Desktop\plugin dev\MysticWeaving\src\main\java\me\tomqnto\mysticWeaving\commands\GetMysticDustCommand.java
+C:\Users\Dinuk\Desktop\plugin dev\MysticWeaving\src\main\java\me\tomqnto\mysticWeaving\commands\GiveMysticDustCommand.java
 C:\Users\Dinuk\Desktop\plugin dev\MysticWeaving\src\main\java\me\tomqnto\mysticWeaving\commands\LevelUpCommand.java
 C:\Users\Dinuk\Desktop\plugin dev\MysticWeaving\src\main\java\me\tomqnto\mysticWeaving\commands\MysticGuiCommand.java
 C:\Users\Dinuk\Desktop\plugin dev\MysticWeaving\src\main\java\me\tomqnto\mysticWeaving\commands\ResetCommand.java
+C:\Users\Dinuk\Desktop\plugin dev\MysticWeaving\src\main\java\me\tomqnto\mysticWeaving\commands\TestCommand.java
 C:\Users\Dinuk\Desktop\plugin dev\MysticWeaving\src\main\java\me\tomqnto\mysticWeaving\commands\UpgradeEnergyLevelCommand.java
 C:\Users\Dinuk\Desktop\plugin dev\MysticWeaving\src\main\java\me\tomqnto\mysticWeaving\commands\UpgradeEnergyRegenAmountCommand.java
 C:\Users\Dinuk\Desktop\plugin dev\MysticWeaving\src\main\java\me\tomqnto\mysticWeaving\listeners\JoinListener.java
@@ -14,6 +14,9 @@ C:\Users\Dinuk\Desktop\plugin dev\MysticWeaving\src\main\java\me\tomqnto\mysticW
 C:\Users\Dinuk\Desktop\plugin dev\MysticWeaving\src\main\java\me\tomqnto\mysticWeaving\menus\api\PagedMenu.java
 C:\Users\Dinuk\Desktop\plugin dev\MysticWeaving\src\main\java\me\tomqnto\mysticWeaving\menus\api\SimpleMenu.java
 C:\Users\Dinuk\Desktop\plugin dev\MysticWeaving\src\main\java\me\tomqnto\mysticWeaving\menus\GetDustMenu.java
+C:\Users\Dinuk\Desktop\plugin dev\MysticWeaving\src\main\java\me\tomqnto\mysticWeaving\menus\LevelupMenu.java
 C:\Users\Dinuk\Desktop\plugin dev\MysticWeaving\src\main\java\me\tomqnto\mysticWeaving\menus\MysticGuiMenu.java
+C:\Users\Dinuk\Desktop\plugin dev\MysticWeaving\src\main\java\me\tomqnto\mysticWeaving\menus\Test.java
 C:\Users\Dinuk\Desktop\plugin dev\MysticWeaving\src\main\java\me\tomqnto\mysticWeaving\MysticWeaving.java
 C:\Users\Dinuk\Desktop\plugin dev\MysticWeaving\src\main\java\me\tomqnto\mysticWeaving\tasks\ActionBar.java
+C:\Users\Dinuk\Desktop\plugin dev\MysticWeaving\src\main\java\me\tomqnto\mysticWeaving\Utils.java

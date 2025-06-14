@@ -26,13 +26,14 @@ public final class MysticWeaving extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new InventoryListener(), this);
         getServer().getPluginManager().registerEvents(new MysticDustListener(), this);
 
-        getCommand("add_mystic_dust").setExecutor(new AddMagicDustCommand());
+        getCommand("test").setExecutor(new TestCommand());
         getCommand("mysticgui").setExecutor(new MysticGuiCommand());
         getCommand("levelup").setExecutor(new LevelUpCommand());
         getCommand("upgrade_energy_level").setExecutor(new UpgradeEnergyLevelCommand());
         getCommand("reset").setExecutor(new ResetCommand());
         getCommand("upgrade_energy_regen_amount").setExecutor(new UpgradeEnergyRegenAmountCommand());
-        getCommand("get_mystic_dust").setExecutor(new GetMysticDustCommand());
+        getCommand("give_mystic_dust").setExecutor(new GiveMysticDustCommand());
+
 
         ActionBar actionBar = new ActionBar();
         actionBar.runTaskTimer(this, 0, 5);

@@ -5,8 +5,8 @@ api-version: '1.21'
 authors: [ Tomqnto ]
 
 commands:
-  add_mystic_dust:
-    usage: /<command> <player> <amount>
+  test:
+    usage: /<command>
   mysticgui:
     usage: /<command>
   levelup:
@@ -17,5 +17,5 @@ commands:
     usage: /<command>
   upgrade_energy_regen_amount:
     usage: /<command>
-  get_mystic_dust:
+  give_mystic_dust:
     usage: /<command>
